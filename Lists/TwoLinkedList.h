@@ -1,6 +1,6 @@
 #pragma once
 #include "Container.h"
-class TwoLinkedList : Container
+class TwoLinkedList : public Container
 {
 public:
 	TwoLinkedList();

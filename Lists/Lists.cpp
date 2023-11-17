@@ -4,30 +4,62 @@
 #include <iostream>
 #include "SinglyLinkedList.h"
 #include "TwoLinkedList.h"
+#include "Container.h"
+
+void writeStr(Container* str)
+{
+	for (int i = 0; i < (*str).GetSize(); i++)
+	{
+		std::cout << (*str)[i] << " " << '\t';
+	}
+	std::cout << "\n\n";
+}
+
 int main()
 {
-    TwoLinkedList a;
-    a.push_back(2);
-    a.push_back(3);
-    a.push_back(5);
-    a.push_back(7);
-    
-    for (int i = 0; i < a.GetSize(); i++)
-    {
-        std::cout << a[i] << '\t';
-    }
-    std::cout << '\n';
+	Container* str;
+	int a = 1;
+	std::cin >> a;
 
+	if (a == 1)
+	{
+		str = new SinglyLinkedList;
+	}
+	else
+	{
+		str = new TwoLinkedList;
+	}
 
-    a.removeAt(2);
+	(*str).push_back(1);
+	(*str).push_back(1);
+	(*str).push_back(1);
+	(*str).push_back(1);
+	(*str).push_back(1);
+	(*str).push_back(1);
 
+	writeStr(str);
 
-    for (int i = 0; i < a.GetSize(); i++)
-    {
-        std::cout << a[i] << '\t';
-    }
-    std::cout << '\n';
-    
+	(*str).push_front(22);
+
+	writeStr(str);
+
+	(*str).insert(4, 2);
+
+	writeStr(str);
+
+	(*str).removeAt(1);
+
+	writeStr(str);
+
+	(*str).pop_front();
+
+	writeStr(str);
+
+	(*str).clear();
+	(*str).push_back(132321);
+
+	writeStr(str);
+
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

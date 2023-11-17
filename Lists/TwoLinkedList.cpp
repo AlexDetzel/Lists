@@ -70,6 +70,13 @@ void TwoLinkedList::pop_front()
 	{
 		std::cout << "There are no elements";
 	}
+	else if (this->Size == 1)
+	{
+		Node* temp = head;
+		head = head->pNext;
+		delete temp;
+		Size--;
+	}
 	else
 	{
 		Node* temp = head;
